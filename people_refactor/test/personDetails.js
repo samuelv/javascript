@@ -11,10 +11,16 @@ var spec = describe("Render detailed person info", function () {
         buster.assert.equals("", this.domElement.innerHTML);
     });
 
-    it("should display name", function () {
+    it("should only display name when no description", function () {
         person.description({name: "Samuel"}, this.domElement);
 
         buster.assert.equals("Samuel", this.domElement.childNodes[0].innerHTML);
+    });
+
+    it("should only display description when no name", function () {
+        person.description({description: "Utvikler"}, this.domElement);
+
+        buster.assert.equals("Utvikler", this.domElement.childNodes[0].innerHTML);
     });
 
 });
