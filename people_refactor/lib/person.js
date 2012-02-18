@@ -2,12 +2,19 @@
 
     person = {};
     person.description = function (personInfo, domElement) {
+        var nameDomNode;
+        var descriptionDomNode;
+
         if (personInfo.name) {
-            domElement.innerHTML = "<h2>" + personInfo.name + "</h2>";
+            nameDomNode = document.createElement('h2');
+            nameDomNode.innerHTML = personInfo.name;
+            domElement.appendChild(nameDomNode);
         }
 
         if (personInfo.description) {
-            domElement.innerHTML = "<p>" + personInfo.description + "</p>";
+            descriptionDomNode = document.createElement('p');
+            descriptionDomNode.innerHTML = personInfo.description;
+            domElement.appendChild(descriptionDomNode);
         }
     }
 
